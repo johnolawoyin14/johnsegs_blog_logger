@@ -1,0 +1,11 @@
+services:
+  - name: express-app
+    type: web
+    buildCommand: |
+      npm install
+      npm run build
+    startCommand: node server.js
+    healthCheckPath: /
+    skipCleanup: true
+    env:
+      NODE_VERSION: 14.20.1
